@@ -34,9 +34,11 @@ class ResultsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final totalQuestions = questions.length;
-    final correctQuestions = summaryData.where((data) {
-      return data['chosen_answer'] == data['correct_answer'];
-    }).length;
+    final correctQuestions = summaryData
+        .where(
+          (data) => data['chosen_answer'] == data['correct_answer'],
+        )
+        .length;
 
     return Container(
       margin: const EdgeInsets.all(50),
